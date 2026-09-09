@@ -1,0 +1,100 @@
+{
+    "personalInfo": {
+        "name"    : "Ashok Shakya",
+        "title"   : "Flutter Developer",
+        "tagline" : "Crafting high-performance cross-platform mobile apps and scalable backend systems.",
+        "email"   : "ashok.shk01@gmail.com",
+        "location": "Pulchowk, Lalitpur, Nepal",
+        "avatar"  : "images/profile-img.jpg",
+        "github"  : "https://github.com/yourusername",
+        "linkedin": "https://linkedin.com/in/yourusername"
+    },   
+    "projects": [
+        {
+        "title"        : "Enterio: Movie & Show Guide",
+        "description"  : "Enterio is an app that provides essential information about the content, including genres, alternative titles, synopsis, and production companies. Additionally, users can read viewer reviews from TMDB and watch trailers or teasers from YouTube.",
+        "icon"         : "images/enterio.png",
+        "developedBy"  : "Personal Project",
+        "techStack"    : ["Flutter", "Dart", "API Integration"],
+        "status"       : "live",
+        "githubLink"   : "",
+        "appStoreLink" : "",
+        "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.enterio&hl=en"
+        },
+        {
+        "title"        : "MediaMeld: Wallpaper App",
+        "description"  : "Transform your device with a handpicked collection of high-resolution wallpapers with multiple categories. Enjoy a curated library of premium artwork designed for your home and lock screens, complete with offline downloads, and quick one-tap setup to personalize your display instantly.",
+        "icon"         : "images/mediameld.png",
+        "developedBy"  : "Personal Project",
+        "techStack"    : ["Flutter", "Dart", "API Integration"],
+        "status"       : "live",
+        "githubLink"   : "",
+        "appStoreLink" : "",
+        "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.mediameld&hl=en"
+        },
+        {
+        "title"        : "Sangeet",
+        "description"  : "Sangeet is a simple and elegant music player app developed using Flutter and Dart. It's designed to make it easy for users to enjoy their favorite offline music stored on their devices. This app offers a clean user interface, music categorization by album and artist, and a convenient search feature.",
+        "icon"         : "images/sangeet.png",
+        "developedBy"  : "Personal Project",
+        "techStack"    : ["Flutter", "Dart"],
+        "status"       : "live",
+        "githubLink"   : "",
+        "appStoreLink" : "",
+        "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.sangeet&hl=en"
+        },
+        {
+        "title"        : "Futsal Dai: Futsal Management App",
+        "description"  : "A mobile application designed for booking venues, managing schedules, and coordinating local group matches with integrated backend database structures.",
+        "icon"         : "images/futsal-dai.png",
+        "developedBy"  : "Personal Project",
+        "techStack"    : ["Flutter", "Dart", "Supabase"],
+        "status"       : "coming-soon",
+        "githubLink"   : "",
+        "appStoreLink" : "",
+        "playStoreLink": ""
+        }
+    ],
+    "skills": [
+        {
+            "category": "Languages & Frameworks",
+            "items"   : ["Flutter / Dart", "JavaScript / TypeScript", "PHP", "Extjs", "PostGres", "HTML5 / CSS3"]
+        },
+        {
+            "category": "Backend & Databases",
+            "items"   : ["Supabase & PostgreSQL", "Firebase & FCM", "REST APIs & Edge Functions", "Extjs", "Yii / Yii2"]
+        },
+        {
+            "category": "Tools & Workflow",
+            "items"   : ["Visual Studio Code", "Git & GitHub", "Google Play Console", "App Store Connect"]
+        }
+    ],
+    "experience": [
+        {
+            "role"       : "Flutter Developer",
+            "company"    : "Miracle Interface",
+            "address"    : "Jwagal, Kupondole, Lalitpur, Nepal",
+            "website"    : "https://miracleinterface.com.np/",
+            "period"     : "Apr 2020 - Present",
+            "description": [
+                "Established compatibility with third party software products.",
+                "Coordinated with the team to finalize designs and confirm requirements for modification & integratio.",
+                "Responsible for conitinous maintenance and development along with testing and debugging.",
+                "Consistently met deadlines and requirements for all projects."
+            ]
+        },
+        {
+            "role"       : "PHP Developer",
+            "company"    : "Miracle Interface",
+            "address"    : "Jwagal, Kupondole, Lalitpur, Nepal",
+            "website"    : "https://miracleinterface.com.np/",
+            "period"     : "Nov 2017 - Apr 2020",
+            "description": [
+                "Used Yii framework for develop web application.",
+                "Developed web app using Javascript(Extjs) and PHP(Yii)",
+                "Collaborate with internal teams to identify and meet system requirements.",
+                "Responsible for design and integrate database(PostgresSQL) along with dtesting and debugging."
+            ]
+        }
+    ]
+}

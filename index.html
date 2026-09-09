@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashok Shakya - Flutter Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo" id="nav-logo">DevPortfolio.</a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#coming-soon">Coming Soon</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact" class="nav-btn">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Profile Card -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-text-content">
+                <span class="tag" id="hero-tag">Flutter Developer</span>
+                <h1 id="hero-name-title">Hi, I'm Ashok Shakya</h1>
+                <p class="hero-subtitle" id="hero-subtitle">Crafting high-performance cross-platform mobile apps and scalable backend systems.</p>
+                <div class="hero-contact-info">
+                    <span id="hero-email">📧 your.email@example.com</span>
+                    <span id="hero-location">📍 Kathmandu, Nepal</span>
+                </div>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn primary">Explore Projects</a>
+                    <a href="#contact" class="btn secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="profile-card-container">
+                <div class="profile-avatar-box">
+                    <img id="hero-avatar" src="images/profile.jpg" alt="Ashok Shakya" class="profile-avatar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="section-desc">A quick look at who I am and what I do.</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am a Flutter developer specializing in building high-performance cross-platform mobile applications and seamless backend system integration. I enjoy turning complex problems into clean, efficient, and user-friendly digital experiences using Flutter and Dart.</p>
+                    <p>Whether I'm architecting local and remote data structures, optimizing application performance and smooth UI rendering, or polishing responsive mobile interfaces, I am always focused on writing maintainable code and building products that matter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Experience & Milestones</h2>
+            <p class="section-desc">My professional journey in software engineering.</p>
+            <div class="timeline" id="timeline-container">
+                <!-- Timeline items injected dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Dynamically Populated) -->
+    <section id="projects" class="section bg-alt">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <p class="section-desc">Some of the applications and systems I've built.</p>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Live projects injected here -->
+            </div>
+            <!-- Show More / Show Less Button Container -->
+            <div class="toggle-container" style="text-align: center; margin-top: 2.5rem;">
+                <button id="toggle-btn" class="btn secondary" style="display: none;" onclick="toggleProjects()">Show More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section (Totally Separate Div) -->
+    <section id="coming-soon" class="section">
+        <div class="container">
+            <h2>Coming Soon</h2>
+            <p class="section-desc">Applications currently in development.</p>
+            <div class="projects-grid" id="coming-soon-grid">
+                <!-- Coming soon projects injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section (Dynamically Populated) -->
+    <section id="skills" class="section bg-alt">
+        <div class="container">
+            <h2>Tech Stack & Skills</h2>
+            <p class="section-desc">Technologies and tools I use regularly.</p>
+            <div class="skills-grid" id="skills-grid">
+                <!-- Data from data.json will be injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <h2>Let's Connect</h2>
+            <p>Have a project in mind or want to talk tech? Send me a message below.</p>
+            
+            <form class="contact-form" action="https://formspree.io/f/maeylgql" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn primary email-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p id="footer-copy">&copy; 2026 Developer Portfolio. Built with HTML & CSS.</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to load JSON Data and Handle Toggle / Sections -->
+    <script>
+        let allLiveProjects = [];
+        let isExpanded = false;
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+
+                // 0. ADD THIS STEP HERE: Populate Personal Info dynamically
+                if (data.personalInfo) {
+                    document.getElementById('nav-logo').textContent = data.personalInfo.name + '.';
+                    document.getElementById('hero-tag').textContent = data.personalInfo.title;
+                    document.getElementById('hero-name-title').textContent = `Hi, I'm ${data.personalInfo.name}`;
+                    document.getElementById('hero-subtitle').textContent = data.personalInfo.tagline;
+                    document.getElementById('hero-email').innerHTML = `📧 ${data.personalInfo.email}`;
+                    document.getElementById('hero-location').innerHTML = `📍 ${data.personalInfo.location}`;
+                    document.getElementById('hero-avatar').src = data.personalInfo.avatar;
+                    document.getElementById('hero-avatar').alt = data.personalInfo.name;
+                    document.getElementById('footer-copy').innerHTML = `&copy; 2026 ${data.personalInfo.name}. Built with HTML & CSS.`;
+                }
+
+                // 1. Separate Live/Featured and Coming Soon projects
+                allLiveProjects = data.projects.filter(p => p.status !== 'coming-soon');
+                const comingSoonProjects = data.projects.filter(p => p.status === 'coming-soon');
+
+                // Render initial live projects (max 3)
+                renderLiveProjects();
+
+                // 2. Render Coming Soon Projects in their own separate grid
+                const comingSoonGrid = document.getElementById('coming-soon-grid');
+                const comingSoonSection = document.getElementById('coming-soon');
+                if (comingSoonProjects.length > 0) {
+                    comingSoonGrid.innerHTML = comingSoonProjects.map(project => createProjectCard(project)).join('');
+                    if (comingSoonSection) comingSoonSection.style.display = 'block';
+                } else {
+                    if (comingSoonSection) comingSoonSection.style.display = 'none';
+                }
+
+                // 3. Render Skills
+                const skillsGrid = document.getElementById('skills-grid');
+                if (skillsGrid) {
+                    skillsGrid.innerHTML = data.skills.map(group => `
+                        <div class="skill-category">
+                            <h3>${group.category}</h3>
+                            <ul>
+                                ${group.items.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `).join('');
+                }
+
+                // 4. Render Experience Timeline
+                const timelineContainer = document.getElementById('timeline-container');
+                if (timelineContainer && data.experience) {
+                    timelineContainer.innerHTML = data.experience.map(item => `
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">${item.period}</div>
+                            <div class="timeline-content">
+                                <h3>${item.role}</h3>
+                                <h4 class="timeline-company-heading">
+                                    ${item.website 
+                                        ? `<a href="${item.website}" target="_blank" class="timeline-company-link">${item.company}</a>` 
+                                        : item.company
+                                    }
+                                    ${item.address ? `<span class="timeline-address"> • ${item.address}</span>` : ''}
+                                </h4>
+                                <ul class="timeline-bullets">
+                                    ${item.description.map(desc => `<li>${desc}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+
+            } catch (error) {
+                console.error("Error loading portfolio data:", error);
+            }
+        });
+
+        // Helper function to generate a project card HTML string
+        function createProjectCard(project) {
+            return `
+                <div class="project-card">
+                    <div class="project-header">
+                        ${project.icon ? `<img src="${project.icon}" alt="${project.title} icon" class="project-icon">` : ''}
+                        <div>
+                            <h3>${project.title}</h3>
+                            ${project.developedBy ? `<span class="project-author">${project.developedBy}</span>` : ''}
+                        </div>
+                    </div>
+                    <p>${project.description}</p>
+                    <div class="tech-stack-container">
+                        <div class="tech-stack">
+                            ${project.techStack.map(tech => `<span>${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="project-footer">
+                        ${project.status === 'coming-soon' 
+                            ? `<span class="badge coming-soon">Coming Soon</span>` 
+                            : `<div class="project-links">
+                                ${project.githubLink ? `
+                                    <a href="${project.githubLink}" target="_blank" class="store-btn">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                        GitHub
+                                    </a>` : ''}
+                                ${project.appStoreLink ? `
+                                    <a href="${project.appStoreLink}" target="_blank" class="store-btn">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75-1.06 4-1.06 1.75 0 3.25 1.06 4.75 1.06 1.25 0 2.5-.75 3.25-2-2.5-1.5-2.75-5.25-.25-7-1.25-1.75-3-2.75-5-2.75-1.5 0-3 1-4 1s-2.75-1-4-1C4.75 10.18 3 11.93 1.75 14.18c-2 3.5-.5 8.75 1.75 11.75 1 1.25 2.25 2 3.5 2 1 0 1.75-.5 3-.5s2 .5 3 .5c1.25 0 2.5-.75 3.5-2 .75-1 1.25-2.25 1.5-3.5z"></path><path d="M15.5 6.5c.75-1 1.25-2.25 1-3.5-1 0-2.25.75-3 1.75-.75.75-1.25 2-1 3.25 1.25.25 2.5-.75 3-1.5z"></path></svg>
+                                        App Store
+                                    </a>` : ''}
+                                ${project.playStoreLink ? `
+                                    <a href="${project.playStoreLink}" target="_blank" class="store-btn">
+                                        <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                        Play Store
+                                    </a>` : ''}
+                            </div>`
+                        }
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render live projects based on whether "Show More" is clicked
+        function renderLiveProjects() {
+            const projectsGrid = document.getElementById('projects-grid');
+            const toggleBtn = document.getElementById('toggle-btn');
+
+            const displayedProjects = isExpanded ? allLiveProjects : allLiveProjects.slice(0, 3);
+            
+            projectsGrid.innerHTML = displayedProjects.map(project => createProjectCard(project)).join('');
+
+            if (allLiveProjects.length > 3) {
+                toggleBtn.style.display = 'inline-block';
+                toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
+            } else {
+                toggleBtn.style.display = 'none';
+            }
+        }
+
+        function toggleProjects() {
+            isExpanded = !isExpanded;
+            renderLiveProjects();
+            
+            if (!isExpanded) {
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
