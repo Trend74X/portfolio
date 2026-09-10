@@ -15,7 +15,7 @@
     <!-- Header / Navbar -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo" id="nav-logo">DevPortfolio.</a>
+            <a href="#" class="logo" id="nav-logo">DevPortfolio</a>
             <nav>
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
@@ -35,8 +35,14 @@
                 <h1 id="hero-name-title">Hi, I'm Ashok Shakya</h1>
                 <p class="hero-subtitle" id="hero-subtitle">Crafting high-performance cross-platform mobile apps and scalable backend systems.</p>
                 <div class="hero-contact-info">
-                    <span id="hero-email">📧 your.email@example.com</span>
-                    <span id="hero-location">📍 Kathmandu, Nepal</span>
+                    <span class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <span id="hero-email">your.email@example.com</span>
+                    </span>
+                    <span class="contact-item">
+                        <svg class="contact-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <span id="hero-location">Kathmandu, Nepal</span>
+                    </span>
                 </div>
                 <div class="hero-btns">
                     <a href="#projects" class="btn primary">Explore Projects</a>
@@ -138,7 +144,7 @@
     <footer>
         <div class="container footer-content">
             <p id="footer-copy">&copy; 2026 Developer Portfolio. Built with HTML & CSS.</p>
-            <div class="social-links">
+            <div class="social-links" id="footer-socials">
                 <a href="https://github.com/yourusername" target="_blank">GitHub</a>
                 <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
             </div>
@@ -157,15 +163,20 @@
 
                 // 0. ADD THIS STEP HERE: Populate Personal Info dynamically
                 if (data.personalInfo) {
-                    document.getElementById('nav-logo').textContent = data.personalInfo.name + '.';
+                    document.getElementById('nav-logo').textContent = data.personalInfo.name ;
                     document.getElementById('hero-tag').textContent = data.personalInfo.title;
                     document.getElementById('hero-name-title').textContent = `Hi, I'm ${data.personalInfo.name}`;
                     document.getElementById('hero-subtitle').textContent = data.personalInfo.tagline;
-                    document.getElementById('hero-email').innerHTML = `📧 ${data.personalInfo.email}`;
-                    document.getElementById('hero-location').innerHTML = `📍 ${data.personalInfo.location}`;
+                    document.getElementById('hero-email').innerHTML = data.personalInfo.email;
+                    document.getElementById('hero-location').innerHTML = data.personalInfo.location;
                     document.getElementById('hero-avatar').src = data.personalInfo.avatar;
                     document.getElementById('hero-avatar').alt = data.personalInfo.name;
                     document.getElementById('footer-copy').innerHTML = `&copy; 2026 ${data.personalInfo.name}. Built with HTML & CSS.`;
+                    const socialsContainer = document.getElementById('footer-socials');
+                    socialsContainer.innerHTML = `
+                        ${data.personalInfo.github ? `<a href="${data.personalInfo.github}" target="_blank">GitHub</a>` : ''}
+                        ${data.personalInfo.linkedin ? `<a href="${data.personalInfo.linkedin}" target="_blank">LinkedIn</a>` : ''}
+                    `;
                 }
 
                 // 1. Separate Live/Featured and Coming Soon projects
