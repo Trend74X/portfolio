@@ -1,99 +1,127 @@
 {
     "personalInfo": {
         "name"    : "Ashok Shakya",
-        "title"   : "Flutter Developer",
+        "title"   : "Flutter & Mobile Systems Developer",
         "tagline" : "Crafting high-performance cross-platform mobile apps and scalable backend systems.",
         "email"   : "ashok.shk01@gmail.com",
         "location": "Pulchowk, Lalitpur, Nepal",
         "avatar"  : "images/profile-img.jpg",
         "github"  : "https://github.com/trend74x",
-        "linkedin": "https://www.linkedin.com/in/ashok-shakya-ab138010b/"
+        "linkedin": "https://www.linkedin.com/in/ashok-shakya-ab138010b/",
+        "resumeLink": "#"
     },   
-    "projects": [
+    "projects": [        
         {
-        "title"        : "Enterio: Movie & Show Guide",
-        "description"  : "Enterio is an app that provides essential information about the content, including genres, alternative titles, synopsis, and production companies. Additionally, users can read viewer reviews from TMDB and watch trailers or teasers from YouTube.",
-        "icon"         : "images/enterio.png",
-        "developedBy"  : "Personal Project",
-        "techStack"    : ["Flutter", "Dart", "API Integration"],
-        "status"       : "live",
-        "githubLink"   : "",
-        "appStoreLink" : "",
-        "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.enterio&hl=en"
+            "title"        : "Enterio: Movie & Show Guide",
+            "description"  : "An immersive entertainment discovery app featuring rich metadata like genres, alternative titles, synopses, and production houses. Powered by GetX state management with integrated TMDB community reviews and inline YouTube trailer streaming.",
+            "icon"         : "images/enterio.png",
+            "developedBy"  : "Personal Project",
+            "techStack"    : ["Flutter", "Dart", "GetX", "TMDB API", "YouTube Player"],
+            "status"       : "live",
+            "githubLink"   : "",
+            "appStoreLink" : "",
+            "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.enterio&hl=en"
         },
         {
-        "title"        : "MediaMeld: Wallpaper App",
-        "description"  : "Transform your device with a handpicked collection of high-resolution wallpapers with multiple categories. Enjoy a curated library of premium artwork designed for your home and lock screens, complete with offline downloads, and quick one-tap setup to personalize your display instantly.",
-        "icon"         : "images/mediameld.png",
-        "developedBy"  : "Personal Project",
-        "techStack"    : ["Flutter", "Dart", "API Integration"],
-        "status"       : "live",
-        "githubLink"   : "",
-        "appStoreLink" : "",
-        "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.mediameld&hl=en"
+            "title"        : "MediaMeld: Wallpaper App",
+            "description"  : "A curated digital gallery of high-resolution device artwork categorized for home and lock screens. Uses GetX for reactive state management, featuring seamless offline caching and quick one-tap setup.",
+            "icon"         : "images/mediameld.png",
+            "developedBy"  : "Personal Project",
+            "techStack"    : ["Flutter", "Dart", "GetX", "REST APIs", "Cached Network Image"],
+            "status"       : "live",
+            "githubLink"   : "",
+            "appStoreLink" : "",
+            "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.mediameld&hl=en"
         },
         {
-        "title"        : "Sangeet",
-        "description"  : "Sangeet is a simple and elegant music player app developed using Flutter and Dart. It's designed to make it easy for users to enjoy their favorite offline music stored on their devices. This app offers a clean user interface, music categorization by album and artist, and a convenient search feature.",
-        "icon"         : "images/sangeet.png",
-        "developedBy"  : "Personal Project",
-        "techStack"    : ["Flutter", "Dart"],
-        "status"       : "live",
-        "githubLink"   : "",
-        "appStoreLink" : "",
-        "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.sangeet&hl=en"
+            "title"        : "B-Mark : Bookmark any Link",
+            "description"  : "A universal digital locker capturing web articles, threads, and products straight from native Android share sheets. Built with clean, lightweight vanilla state handling and Sqflite for ultra-fast local database queries.",
+            "icon"         : "images/b-mark.png",
+            "developedBy"  : "Personal Project",
+            "techStack"    : ["Flutter", "Dart", "Sqflite", "Android Intent"],
+            "status"       : "live",
+            "githubLink"   : "",
+            "appStoreLink" : "",
+            "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.bmark"
         },
         {
-        "title"        : "Futsal Dai: Futsal Management App",
-        "description"  : "A mobile application designed for booking venues, managing schedules, and coordinating local group matches with integrated backend database structures.",
-        "icon"         : "images/futsal-dai.png",
-        "developedBy"  : "Personal Project",
-        "techStack"    : ["Flutter", "Dart", "Supabase"],
-        "status"       : "coming-soon",
-        "githubLink"   : "",
-        "appStoreLink" : "",
-        "playStoreLink": ""
+            "title"        : "Sangeet",
+            "description"  : "A lightweight, elegant local music player designed for seamless playback of device-stored audio, structured efficiently with GetX reactive controllers, real-time searching, and album/artist categorization.",
+            "icon"         : "images/sangeet.png",
+            "developedBy"  : "Personal Project",
+            "techStack"    : ["Flutter", "Dart", "GetX", "Audio Service"],
+            "status"       : "live",
+            "githubLink"   : "",
+            "appStoreLink" : "",
+            "playStoreLink": "https://play.google.com/store/apps/details?id=com.trend74x.sangeet&hl=en"
+        },
+        {
+            "title"        : "Futsal Dai: Futsal Management App",
+            "description"  : "An operational mobile solution built for instant turf booking, schedule conflict resolution, and local team coordination backed by robust cloud database structures.",
+            "icon"         : "images/futsal-dai.png",
+            "developedBy"  : "Personal Project",
+            "techStack"    : ["Flutter", "Dart", "GetX", "Supabase", "PostgreSQL"],
+            "status"       : "coming-soon",
+            "githubLink"   : "",
+            "appStoreLink" : "",
+            "playStoreLink": ""
         }
     ],
     "skills": [
         {
             "category": "Languages & Frameworks",
-            "items"   : ["Flutter / Dart", "JavaScript / TypeScript", "PHP", "Extjs", "PostGres", "HTML5 / CSS3"]
+            "items"   : ["Flutter", "Dart", "JavaScript / TypeScript", "PHP", "ExtJS", "HTML5 / CSS3"]
         },
         {
-            "category": "Backend & Databases",
-            "items"   : ["Supabase & PostgreSQL", "Firebase & FCM", "REST APIs & Edge Functions", "Extjs", "Yii / Yii2"]
+            "category": "State Management & Architecture",
+            "items"   : ["GetX", "Provider", "Reactive State", "Component Architecture"]
+        },
+        {
+            "category": "Backend, Database & SDKs",
+            "items"   : ["Supabase & PostgreSQL", "Firebase & FCM", "Agora SDK", "REST APIs", "Yii / Yii2", "Sqflite"]
         },
         {
             "category": "Tools & Workflow",
-            "items"   : ["Visual Studio Code", "Git & GitHub", "Google Play Console", "App Store Connect"]
+            "items"   : ["VS Code", "Git & GitHub", "Google Play Console", "App Store Connect", "Postman"]
         }
     ],
     "experience": [
+        {
+            "role"       : "Flutter & Mobile Systems Developer",
+            "company"    : "Miracle Interface",
+            "address"    : "Jwagal, Kupondole, Lalitpur, Nepal",
+            "website"    : "https://miracleinterface.com.np/",
+            "period"     : "2023 - Present",
+            "description": [
+                "Architected and deployed 15+ production-ready cross-platform mobile applications to both Google Play Store and Apple App Store.",
+                "Engineered high-profile enterprise and civic mobile solutions for major global entities, including official Japanese government applications (Senpoke, Sendai, Fujisawa, Morinfo) and scalable enterprise systems for NTT DATA and Yonefu International Group.",
+                "Collaborated closely with cross-functional project managers and coordinators to translate complex functional requirements into stable, performant mobile features.",
+                "Integrated complex third-party SDKs including Agora for real-time media streaming and Firebase for messaging, alongside rigorous local debugging and widget optimization."
+            ]
+        },
         {
             "role"       : "Flutter Developer",
             "company"    : "Miracle Interface",
             "address"    : "Jwagal, Kupondole, Lalitpur, Nepal",
             "website"    : "https://miracleinterface.com.np/",
-            "period"     : "Apr 2020 - Present",
+            "period"     : "Apr 2020 - 2023",
             "description": [
-                "Established compatibility with third party software products.",
-                "Coordinated with the team to finalize designs and confirm requirements for modification & integratio.",
-                "Responsible for conitinous maintenance and development along with testing and debugging.",
-                "Consistently met deadlines and requirements for all projects."
+                "Began cross-platform mobile engineering with Flutter and Dart, building core application interfaces and state-managed components.",
+                "Coordinated with internal teams to establish compatibility with third-party software products and ensure responsive UI layouts.",
+                "Handled continuous application maintenance, rigorous debugging, and performance testing across initial client projects."
             ]
         },
         {
-            "role"       : "PHP Developer",
+            "role"       : "PHP & Web Application Developer",
             "company"    : "Miracle Interface",
             "address"    : "Jwagal, Kupondole, Lalitpur, Nepal",
             "website"    : "https://miracleinterface.com.np/",
             "period"     : "Nov 2017 - Apr 2020",
             "description": [
-                "Used Yii framework for develop web application.",
-                "Developed web app using Javascript(Extjs) and PHP(Yii)",
-                "Collaborate with internal teams to identify and meet system requirements.",
-                "Responsible for design and integrate database(PostgresSQL) along with dtesting and debugging."
+                "Developed scalable enterprise web applications leveraging the Yii framework and PHP backend services.",
+                "Built responsive, interactive frontend dashboards and administrative interfaces using JavaScript and ExtJS framework integration.",
+                "Designed, optimized, and maintained relational PostgreSQL database schemas to support high-throughput data processing.",
+                "Conducted exhaustive unit testing, troubleshooting, and rapid bug resolution across internal web platforms."
             ]
         }
     ]

@@ -155,15 +155,16 @@
     <script>
         let allLiveProjects = [];
         let isExpanded = false;
+        const INITIAL_PROJECT_LIMIT = 6;
 
         document.addEventListener("DOMContentLoaded", async () => {
             try {
                 const response = await fetch('data.json');
                 const data = await response.json();
 
-                // 0. ADD THIS STEP HERE: Populate Personal Info dynamically
+                // 0. Populate Personal Info dynamically
                 if (data.personalInfo) {
-                    document.getElementById('nav-logo').textContent = data.personalInfo.name ;
+                    document.getElementById('nav-logo').textContent = data.personalInfo.name;
                     document.getElementById('hero-tag').textContent = data.personalInfo.title;
                     document.getElementById('hero-name-title').textContent = `Hi, I'm ${data.personalInfo.name}`;
                     document.getElementById('hero-subtitle').textContent = data.personalInfo.tagline;
@@ -183,10 +184,9 @@
                 allLiveProjects = data.projects.filter(p => p.status !== 'coming-soon');
                 const comingSoonProjects = data.projects.filter(p => p.status === 'coming-soon');
 
-                // Render initial live projects (max 3)
                 renderLiveProjects();
 
-                // 2. Render Coming Soon Projects in their own separate grid
+                // 2. Render Coming Soon Projects
                 const comingSoonGrid = document.getElementById('coming-soon-grid');
                 const comingSoonSection = document.getElementById('coming-soon');
                 if (comingSoonProjects.length > 0) {
@@ -238,7 +238,6 @@
             }
         });
 
-        // Helper function to generate a project card HTML string
         function createProjectCard(project) {
             return `
                 <div class="project-card">
@@ -281,16 +280,17 @@
             `;
         }
 
-        // Render live projects based on whether "Show More" is clicked
         function renderLiveProjects() {
             const projectsGrid = document.getElementById('projects-grid');
             const toggleBtn = document.getElementById('toggle-btn');
 
-            const displayedProjects = isExpanded ? allLiveProjects : allLiveProjects.slice(0, 3);
+            const displayedProjects = isExpanded 
+                ? allLiveProjects 
+                : allLiveProjects.slice(0, INITIAL_PROJECT_LIMIT);
             
             projectsGrid.innerHTML = displayedProjects.map(project => createProjectCard(project)).join('');
 
-            if (allLiveProjects.length > 3) {
+            if (allLiveProjects.length > INITIAL_PROJECT_LIMIT) {
                 toggleBtn.style.display = 'inline-block';
                 toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
             } else {
